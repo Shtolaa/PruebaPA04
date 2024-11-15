@@ -1,7 +1,7 @@
 package org.example;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
+import static org.example.Main.*;
 // revisar : https://plus.maths.org/content/mysterious-number-6174
 // basado en la operación de kaprekar se deben codificar 2 funciones:
 // 1) la función kaprekarOp realizará el ordenamiento y resta descrita en el algoritmo
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 
 
-import static com.example.dev.Main_Kaprekar.*;
+
 
 public class Test_Kaprekar{
 

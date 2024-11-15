@@ -3,17 +3,35 @@ package org.example;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
-    public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    public static int kaprekarOp(int numkaprekar){
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        int[] numsArray = new int[4];
+        int i = numsArray.length - 1;
+        while (numkaprekar > 0) {
+            numsArray[i] = numkaprekar%10;
+            numkaprekar = numkaprekar/10;
+            i--;
         }
+        for (int l = 0; l < numsArray.length-1; l++) {
+            for (int j = l+1; j < numsArray.length ; j++) {
+                if (numsArray[j]>numsArray[l]){
+                    int aux = numsArray[j];
+                    numsArray[j] = numsArray[l];
+                    numsArray[l] = aux;
+                }
+            }
+        }
+        int numMayor = numsArray[0]*1000 + numsArray[1]*100 + numsArray[2]*10 + numsArray[3];
+        int numMenor =  numsArray[3]*1000 + numsArray[2]*100 + numsArray[1]*10 + numsArray[0];
+
+        return numMayor-numMenor;
+    }
+    public static int itKaprekar(int numero) {
+        int i=0;
+        while (numero!= 6174){
+            numero = kaprekarOp(numero);
+            i++;
+        }
+        return i;
     }
 }
