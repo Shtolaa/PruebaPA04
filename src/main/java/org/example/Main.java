@@ -27,6 +27,11 @@ public class Main {
         return numMayor-numMenor;
     }
     public static int itKaprekar(int numero) {
-        return numero;
+        int i=0;
+        while (numero!= 6174){
+            numero = kaprekarOp(numero);
+            i++;
+        }
+        return i;
     }
 }
